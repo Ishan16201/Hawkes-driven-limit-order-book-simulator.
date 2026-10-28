@@ -1,0 +1,54 @@
+{
+  "config_schema_version": 1,
+  "configuration_id": "illustrative-six-type-example",
+  "status": "illustrative_not_calibrated",
+  "seed": 20261028,
+  "horizon_seconds": 10.0,
+  "time_unit": "seconds internally; exchange timestamps are floored nanoseconds",
+  "price_unit": "integer ticks",
+  "quantity_unit": "integer lots",
+  "hawkes": {
+    "event_types": ["LB", "LA", "CB", "CA", "MB", "MS"],
+    "baseline_events_per_second": [2.0, 2.0, 0.5, 0.5, 0.3, 0.3],
+    "alpha_branching": [
+      [0.10, 0.02, 0.01, 0.01, 0.08, 0.02],
+      [0.02, 0.10, 0.01, 0.01, 0.02, 0.08],
+      [0.05, 0.01, 0.05, 0.01, 0.02, 0.01],
+      [0.01, 0.05, 0.01, 0.05, 0.01, 0.02],
+      [0.01, 0.01, 0.01, 0.01, 0.08, 0.03],
+      [0.01, 0.01, 0.01, 0.01, 0.03, 0.08]
+    ],
+    "beta_per_second": [
+      [5.0, 5.0, 5.0, 5.0, 5.0, 5.0],
+      [5.0, 5.0, 5.0, 5.0, 5.0, 5.0],
+      [5.0, 5.0, 5.0, 5.0, 5.0, 5.0],
+      [5.0, 5.0, 5.0, 5.0, 5.0, 5.0],
+      [5.0, 5.0, 5.0, 5.0, 5.0, 5.0],
+      [5.0, 5.0, 5.0, 5.0, 5.0, 5.0]
+    ]
+  },
+  "marks": {
+    "reference_price_ticks": 1000,
+    "limit_price_offset_ticks": [0, 3],
+    "limit_size_lots": [1, 5],
+    "market_size_lots": [1, 3],
+    "cancel_target_policy": "best_level_front"
+  },
+  "initial_book": {
+    "best_bid_ticks": 999,
+    "best_ask_ticks": 1001,
+    "levels_per_side": 5,
+    "orders_per_level": 3,
+    "tick_spacing": 1,
+    "order_size_lots": 10
+  },
+  "analytics": {
+    "currency_per_tick": 0.01,
+    "maker_fee_rebate_per_lot": -0.002,
+    "taker_fee_per_lot": 0.003,
+    "depth_levels": [1, 5],
+    "return_horizons_seconds": [0.1, 0.5, 1.0, 5.0],
+    "realized_vol_intervals_seconds": [0.1, 1.0],
+    "adverse_selection_horizons_seconds": [0.05, 0.1, 0.5, 1.0]
+  }
+}

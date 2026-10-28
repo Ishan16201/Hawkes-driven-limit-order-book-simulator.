@@ -1,0 +1,33 @@
+# Build products and CMake state
+/build/
+/cmake-build-*/
+/CMakeFiles/
+/CMakeCache.txt
+/CTestTestfile.cmake
+/compile_commands.json
+/Testing/
+
+# Compiled binaries and libraries
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Generated research data and reports
+/data/raw/
+/data/normalized/
+/results/
+/artifacts/
+*.profraw
+*.profdata
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*.swo
